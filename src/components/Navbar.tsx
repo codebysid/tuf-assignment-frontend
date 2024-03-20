@@ -1,12 +1,10 @@
-import { NavLink, useLocation } from "react-router-dom"
 import Logo from "./Logo"
 import { HiMenu } from "react-icons/hi"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import NavbarItemLinks from "./NavbarItemLinks"
 
 
 const Navbar = () => {
-  const location = useLocation()
   const [showMobileNav, setShowMobileNav] = useState(true)
 
   return (

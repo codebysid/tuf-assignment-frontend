@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 
 const navItems = [
   {
@@ -14,6 +14,7 @@ const navItems = [
 ]
 
 const NavbarItemLinks = () => {
+  const location = useLocation()
   return (
     <>
       {
