@@ -97,15 +97,15 @@ th{
 }
 
 tr{
-  @apply hover:bg-darkGray
+  @apply hover:bg-darkGray 
 }
 
 td{
-  @apply pr-10 py-5 w-1/6
+  @apply pr-10 py-5 max-w-xs
 }
 
 pre,code{
-  @apply w-full overflow-x-auto pb-2 
+  @apply w-[100%] overflow-x-auto pb-2 
 }
 
 

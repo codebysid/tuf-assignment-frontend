@@ -7,9 +7,10 @@ type TSubmissionCard = {
 }
 
 const SubmissionCard: FC<TSubmissionCard> = ({ submissionData }) => {
-  const stdOut = useCodeOutput(submissionData.source_code, submissionData.code_language)
+  const stdOut = useCodeOutput(submissionData.source_code, submissionData.code_language, submissionData.stdin)
   const tempDate = new Date(submissionData.submission_timestamp)
 
+  console.log({ stdOut })
   return (
     <tr>
       <td>{submissionData.username}</td>
@@ -17,9 +18,11 @@ const SubmissionCard: FC<TSubmissionCard> = ({ submissionData }) => {
       <td>{submissionData.stdin}</td>
       <td className='codeTd'><pre><code>{submissionData.source_code.slice(0, 101)}{submissionData.source_code.length > 100 && "..."}</code></pre></td>
       <td>
-        {stdOut?.stdout && atob(stdOut.stdout)}
-        {stdOut?.stderr && stdOut.stderr}
-        {stdOut?.message && stdOut.message.split("at").at(0)}
+        <pre><code>
+          {stdOut?.stdout && atob(stdOut.stdout)}
+          {stdOut?.stderr && stdOut.stderr}
+          {stdOut?.message && stdOut.message.split("at").at(0)}
+        </code></pre>
       </td>
       <td>{tempDate.toLocaleString()}</td>
     </tr>

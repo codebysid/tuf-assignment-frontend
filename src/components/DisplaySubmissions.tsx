@@ -8,8 +8,8 @@ const DisplaySubmissions = () => {
     <div className='text-xs md:text-lg lg:text-lg'>
       {
         data.length > 0 ? <div className='w-full flex justify-center items-center absolute top-20 md:top-40 lg:top-40 '>
-          <div className=' h-[75vh] overflow-y-scroll px-4'>
-            <table>
+          <div className=' h-[75vh] overflow-y-scroll px-4 w-full'>
+            <table className='w-full'>
               <thead>
                 <th>Username</th>
                 <th>Code Language</th>

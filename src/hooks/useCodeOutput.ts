@@ -7,7 +7,7 @@ type Tstdout = {
   message?: string | null
 }
 
-const useCodeOutput = (sourceCode: string, codeLanguage: string) => {
+const useCodeOutput = (sourceCode: string, codeLanguage: string, stdin: string) => {
   const [data, setData] = useState<Tstdout | null>(null)
 
   const url = 'https://judge0-ce.p.rapidapi.com/submissions?base64_encoded=true&wait=true&fields=*';
@@ -23,7 +23,7 @@ const useCodeOutput = (sourceCode: string, codeLanguage: string) => {
     body: JSON.stringify({
       language_id: getCodeLanguageId(codeLanguage),
       source_code: btoa(sourceCode),
-      stdin: ''
+      stdin
     })
   };
 
